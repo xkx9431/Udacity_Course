@@ -1,0 +1,20 @@
+def tri_num(n):
+    result = []
+    current = [1]
+    for i in range(0,n):
+        result.append(current)
+        current = make_next_row(current)
+    return result
+# next row
+
+
+def make_next_row(row):
+    result = []
+    prev = 0
+    for e in row:
+        result.append(prev + e)
+        prev = e
+    result.append(prev)
+    return result
+
+print(tri_num(6))
